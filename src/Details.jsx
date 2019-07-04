@@ -1,6 +1,5 @@
 import React from 'react';
-// import LeftContent from './LeftContent';
-// import Crop from './Crop';
+import ClearMind from './ClearMind';
 import Kombucha from './Kombucha';
 
 function Details() {

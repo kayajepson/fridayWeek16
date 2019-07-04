@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 import Details from './Details';
 import Kombucha from './Kombucha';
 
-function ClearMind(props) {
-  var myClearMindStyles = {
+function GingerTumeric(props) {
+  var myGingerTumericStyles = {
     backgroundColor: '#fafafa',
     display: 'grid',
     gridTemplateColumns: '100vr',
@@ -46,7 +46,7 @@ function ClearMind(props) {
   }
 
   return (
-      <div style={myClearMindStyles}>
+      <div style={myGingerTumericStyles}>
         <NavBar/>
         <div class="divider"></div>
         <div style={contentStyles}>
@@ -60,4 +60,4 @@ function ClearMind(props) {
   )
 }
 
-export default ClearMind;
+export default GingerTumeric;

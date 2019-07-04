@@ -22,22 +22,22 @@ function Kombucha(props) {
   return (
     <div style={rightContentStyle}>
     {props.name}asdf
-      {props.description}
-      {props.availibility}
+    <p>{props.description}</p>
+    {props.availibility}
     {props.quote}
     {props.rating}
     {props.color}
- </div>
+    </div>
   )
 }
 
 Kombucha.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  availibility: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  availibility: PropTypes.string,
   quote: PropTypes.string,
   rating: PropTypes.string,
-  color: PropTypes.string,
+  color: PropTypes.string
 };
 
 export default Kombucha;
