@@ -35,9 +35,24 @@ function ClearMind(props) {
 
   var rectangleStyle = {
     marginTop: '3%',
-    backgroundColor: 'blue',
-    width: '500px',
+    backgroundColor: '#7ca7ad',
+    width: '75%',
     height: '350px',
+    backgroudPosition: 'absolute',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    zIndex: '10',
+  }
+
+  var nameStyle = {
+    // marginTop: '-5%',
+    color: "#ffffff",
+    fontSize: '75px',
+    fontWeight: '600',
+    textAlign: 'center',
+    fontFamily: 'Oswald, sans-serif',
+    fontStretch: 'ultra-condensed',
     backgroudPosition: 'absolute',
     display: 'block',
     marginLeft: 'auto',
@@ -51,9 +66,9 @@ function ClearMind(props) {
         <div class="divider"></div>
         <div style={contentStyles}>
         <img class="activator" alt="logo" style={headerImgStyle} src={require('./assets/CM-Desktop.png')}/>
-        {props.name}
-        <Kombucha/>
+        {/*<Kombucha/>*/}
         <div style={rectangleStyle}>
+        <span style={nameStyle}>CLEAR MIND</span>
         </div>
         </div>
       </div>

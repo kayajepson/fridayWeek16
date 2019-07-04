@@ -1,5 +1,6 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   var myNavBarStyles = {
@@ -32,11 +33,11 @@ function NavBar() {
         <div class="nav-wrapper" style={myNavBarStyles}>
         <img style={logoStyles} width={150} alt="logo" src={require('./assets/logo-brew-dr_s.png')}/>
           <ul id="nav-mobile" style={listStyles} class="right hide-on-med-and-down">
-            <li><a href="sass.html" class="brown-text darken-4" style={textStyles}>WHAT IS KOMBUCHA?</a></li>
-            <li><a href="badges.html" class="brown-text darken-4" style={textStyles}>ABOUT US</a></li>
-            <li><a href="collapsible.html" class="brown-text darken-4" style={textStyles}>OUR KOMBUCHA</a></li>
-            <li><a href="badges.html" class="brown-text darken-4" style={textStyles}>FIND BREW DR.</a></li>
-            <li><a href="collapsible.html" class="brown-text darken-4" style={textStyles}>BLOG</a></li>
+            <li><Link to="/whatIsKombucha" class="brown-text darken-4" style={textStyles}>WHAT IS KOMBUCHA?</Link></li>
+            <li><Link to="/about" class="brown-text darken-4" style={textStyles}>ABOUT US</Link></li>
+            <li><Link to="/" class="brown-text darken-4" style={textStyles}>OUR KOMBUCHA</Link></li>
+            <li><Link to="/findUs" class="brown-text darken-4" style={textStyles}>FIND BREW DR.</Link></li>
+            <li><Link to="/blog" class="brown-text darken-4" style={textStyles}>BLOG</Link></li>
           </ul>
         </div>
       </nav>
