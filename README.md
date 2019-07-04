@@ -2,13 +2,13 @@
 An online tap room where you can track a store's kombucha selection. I decided to try to recreate the Brew Dr Kombucha website instead of fabricating one.
 
 The initial component tree:
-![component tree image](./src/assets/compTree.png =500x)
+![component tree image](./src/assets/compTree.png)
 
 The website to be cloned:
-![site clone image](./src/assets/brewdr.png =500x)
+![site clone image](./src/assets/brewdr.png)
 
 Day 1 progress:
-![site clone image](./src/assets/day1_progress.png =500x)
+![site clone image](./src/assets/day1_progress.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
