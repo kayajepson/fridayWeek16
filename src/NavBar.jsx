@@ -13,6 +13,7 @@ function NavBar() {
   }
   var barStyles = {
     minHeight: '150px',
+    marginBottom: '5%'
   }
   var listStyles = {
     marginTop: '2%',
