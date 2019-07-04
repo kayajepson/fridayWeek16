@@ -12,49 +12,49 @@ function BodyContainer() {
   <div style={myBodyContainerStyles}>
     <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/clearmind"><img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-CM.png')}/></a>
+        <a href="/clearmind"><img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-CM.png')}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-LUV.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-LUV.png')}/>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-ML.png')}/>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-GT.png')}/>
-      </div>
-      <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-STB.png')}/>
-      </div>
-      <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-PF2.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-ML.png')}/>
       </div>
     </div>
 
     <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-SB.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-GT.png')}/>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-UL.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-STB.png')}/>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-HAP.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-PF2.png')}/>
       </div>
     </div>
 
     <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-SA.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-SB.png')}/>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-CH.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-UL.png')}/>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-LGC.png')}/>
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-HAP.png')}/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card-image waves-effect waves-block waves-light col s4">
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-SA.png')}/>
+      </div>
+      <div class="card-image waves-effect waves-block waves-light col s4">
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-CH.png')}/>
+      </div>
+      <div class="card-image waves-effect waves-block waves-light col s4">
+        <img class="activator" alt="logo" src={require('./assets/BrewDr-Web-Tiles-LGC.png')}/>
       </div>
     </div>
   </div>

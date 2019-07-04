@@ -29,7 +29,7 @@ function NavBar() {
     <div class="navbar-fixed">
       <nav class ="grey lighten-5" style={barStyles}>
         <div class="nav-wrapper" style={myNavBarStyles}>
-        <img style={logoStyles} width={150} alt="logo" src={require('../assets/logo-brew-dr_s.png')}/>
+        <img style={logoStyles} width={150} alt="logo" src={require('./assets/logo-brew-dr_s.png')}/>
           <ul id="nav-mobile" style={listStyles} class="right hide-on-med-and-down">
             <li><a href="sass.html" class="brown-text darken-4" style={textStyles}>WHAT IS KOMBUCHA?</a></li>
             <li><a href="badges.html" class="brown-text darken-4" style={textStyles}>ABOUT US</a></li>
