@@ -101,17 +101,17 @@ function Details() {
   ];
 
   return (
-    <div style={topStyle}>
-
-    <div style={leftPosition}>
-    {availableProduce.map((season, index) =>
-      <LeftContent
-      name={season.name}
-      description={season.description.map(select => <p>{select}</p>)}
-      key={index}/>
-    )}
-    </div>
-    </div>
+    // <div style={topStyle}>
+    //
+    // <div style={leftPosition}>
+    // {availableProduce.map((season, index) =>
+    //   <LeftContent
+    //   name={season.name}
+    //   description={season.description.map(select => <p>{select}</p>)}
+    //   key={index}/>
+    // )}
+    // </div>
+    // </div>
   )
 }
 

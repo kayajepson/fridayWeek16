@@ -12,7 +12,7 @@ function BodyContainer() {
   <div style={myBodyContainerStyles}>
     <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-CM.png')}/>
+        <a href="/clearmind"><img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-CM.png')}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
         <img class="activator" alt="logo" src={require('../assets/BrewDr-Web-Tiles-LUV.png')}/>

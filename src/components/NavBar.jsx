@@ -26,7 +26,7 @@ function NavBar() {
   }
 
   return (
-    <div>
+    <div class="navbar-fixed">
       <nav class ="grey lighten-5" style={barStyles}>
         <div class="nav-wrapper" style={myNavBarStyles}>
         <img style={logoStyles} width={150} alt="logo" src={require('../assets/logo-brew-dr_s.png')}/>
