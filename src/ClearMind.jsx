@@ -42,13 +42,14 @@ function ClearMind(props) {
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
-    zIndex: '10',
+    zIndex: '5',
   }
 
   var nameStyle = {
-    // marginTop: '-5%',
     color: "#ffffff",
     fontSize: '75px',
+    position: 'sticky',
+    lineHeight: '45px',
     fontWeight: '600',
     textAlign: 'center',
     fontFamily: 'Oswald, sans-serif',
@@ -56,6 +57,7 @@ function ClearMind(props) {
     backgroudPosition: 'absolute',
     display: 'block',
     marginLeft: 'auto',
+    marginTop: '-37px',
     marginRight: 'auto',
     zIndex: '10',
   }
@@ -130,7 +132,7 @@ function ClearMind(props) {
         <img class="activator" alt="logo" style={headerImgStyle} src={require('./assets/CM-Desktop.png')}/>
         {/*<Kombucha/>*/}
         <div style={rectangleStyle}>
-        <span style={nameStyle}>CLEAR MIND</span>
+        <h2 style={nameStyle}>CLEAR MIND</h2>
         <br/><br/>
         <span style={descriptionStyle}>A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is <br/> bright and invigorating.</span>
         <br/><br/>
