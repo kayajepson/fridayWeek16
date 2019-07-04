@@ -8,7 +8,7 @@ The website to be cloned:
 ![site clone image](./src/assets/brewdr.png)
 
 Day 1 progress:
-![site clone image](./src/assets/day1_progress.png)
+![site clone image](./src/assets/day1_prog.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
