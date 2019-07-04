@@ -37,7 +37,7 @@ function ClearMind(props) {
     marginTop: '3%',
     backgroundColor: '#7ca7ad',
     width: '75%',
-    height: '350px',
+    height: '550px',
     backgroudPosition: 'absolute',
     display: 'block',
     marginLeft: 'auto',
@@ -60,6 +60,68 @@ function ClearMind(props) {
     zIndex: '10',
   }
 
+  var descriptionStyle = {
+    // marginTop: '-5%',
+    color: "#ffffff",
+    fontSize: '25px',
+    fontWeight: '300',
+    textAlign: 'center',
+    fontFamily: 'Josefin Sans, sans-serif',
+    fontStretch: 'ultra-condensed',
+    fontStyle: 'italic',
+    backgroudPosition: 'absolute',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    zIndex: '10',
+  }
+
+  var availibilityStyle = {
+    // marginTop: '-5%',
+    color: "#ffffff",
+    fontSize: '20px',
+    fontWeight: '300',
+    textAlign: 'center',
+    fontFamily: 'Josefin Sans, sans-serif',
+    fontStretch: 'ultra-condensed',
+    backgroudPosition: 'absolute',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    zIndex: '10',
+  }
+
+  var quoteStyle = {
+    // marginTop: '-5%',
+    color: "#ffffff",
+    fontSize: '25px',
+    fontWeight: '600',
+    textAlign: 'center',
+    fontFamily: 'Josefin Sans, sans-serif',
+    fontStretch: 'ultra-expanded',
+    fontStyle: 'italic',
+    backgroudPosition: 'absolute',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    zIndex: '10',
+  }
+
+  var ratingStyle = {
+    // marginTop: '-5%',
+    color: "#ffffff",
+    fontSize: '15px',
+    fontWeight: '600',
+    textAlign: 'center',
+    fontFamily: 'Oswald, sans-serif',
+    fontStretch: 'ultra-condensed',
+    backgroudPosition: 'absolute',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    zIndex: '10',
+  }
+
   return (
       <div style={myClearMindStyles}>
         <NavBar/>
@@ -69,6 +131,20 @@ function ClearMind(props) {
         {/*<Kombucha/>*/}
         <div style={rectangleStyle}>
         <span style={nameStyle}>CLEAR MIND</span>
+        <br/><br/>
+        <span style={descriptionStyle}>A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is <br/> bright and invigorating.</span>
+        <br/><br/>
+        <span style={availibilityStyle}>Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs.</span>
+        <br/><br/>
+        <span style={quoteStyle}>"My favorite kombucha flavor out there!"</span>
+        <br/><br/>
+        <span style={ratingStyle}>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>4.7</h6>
+        </span>
         </div>
         </div>
       </div>
