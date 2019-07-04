@@ -10,8 +10,7 @@ function App() {
   }
 
   return (
-    <div style={appStyles} className="App">
-
+    <div style={appStyles}>
     <MainContainer />
     </div>
   );
