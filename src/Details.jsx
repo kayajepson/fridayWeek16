@@ -23,7 +23,8 @@ function Details() {
       description:"A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is bright and invigorating.",
       availibility: "Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs",
       quote: "My favorite kombucha flavor out there!",
-      rating: "4.7"
+      rating: "4.7",
+      color: "#86b7bc"
     },
     {
       name: "LOVE",
