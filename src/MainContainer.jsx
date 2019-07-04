@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from './NavBar';
 import HeaderTwo from './HeaderTwo';
 import BodyContainer from './BodyContainer';
-import 'materialize-css/dist/css/materialize.min.css'
+import NavBar from './NavBar';
+import 'materialize-css/dist/css/materialize.min.css';
 
 function MainContainer() {
   var myMainContainerStyles = {
@@ -13,7 +13,7 @@ function MainContainer() {
 
   return (
       <div style={myMainContainerStyles}>
-        <NavBar/>
+      <NavBar/>
         <div class="divider"></div>
         <HeaderTwo/>
         <br/>

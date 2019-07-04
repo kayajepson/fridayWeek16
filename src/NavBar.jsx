@@ -1,5 +1,5 @@
 import React from 'react';
-import 'materialize-css/dist/css/materialize.min.css'
+import 'materialize-css/dist/css/materialize.min.css';
 
 function NavBar() {
   var myNavBarStyles = {
@@ -9,7 +9,7 @@ function NavBar() {
   var logoStyles = {
     width: '150px',
     marginTop: '2%',
-    marginLeft: '2%'
+    marginLeft: '1%'
   }
   var barStyles = {
     minHeight: '150px',

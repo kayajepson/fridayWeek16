@@ -9,11 +9,17 @@ function ClearMind() {
     gridTemplateColumns: '100vr',
   }
 
+  var contentStyles = {
+    marginTop: '10%'
+  }
+
   return (
       <div style={myClearMindStyles}>
         <NavBar/>
         <div class="divider"></div>
-        <p>here is some content</p>
+        <div style={contentStyles}>
+        alsasdfjaslkdf
+        </div>
       </div>
   )
 }

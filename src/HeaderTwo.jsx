@@ -4,7 +4,8 @@ import 'materialize-css/dist/css/materialize.min.css'
 function HeaderTwo() {
   var headerTwoStyles = {
     backgroundColor: '#fafafa',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: '7%'
   }
 
   return (

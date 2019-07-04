@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MainContainer from './MainContainer';
+import { BrowserRouter } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css'
 import { Switch, Route } from 'react-router-dom';
 import ClearMind from './ClearMind';
@@ -12,11 +12,13 @@ function App() {
   }
 
   return (
-    <div className="App" style={appStyles}>
+    <div>
+    <BrowserRouter>
       <Switch>
         <Route exact path='/' component={MainContainer} />
-        <Route path='/clearmind' component={ClearMind} />
+        <Route exact path='/clearmind' component={ClearMind} />
       </Switch>
+    </BrowserRouter>
     </div>
 
 
