@@ -16,6 +16,13 @@ function NavBar() {
   }
   var listStyles = {
     marginTop: '2%',
+    color: '#422a17',
+  }
+
+  var textStyles = {
+    fontSize: '20px',
+    fontWeight: '500',
+    color: '#422a17',
   }
 
   return (
@@ -24,9 +31,11 @@ function NavBar() {
         <div class="nav-wrapper" style={myNavBarStyles}>
         <img style={logoStyles} width={150} alt="logo" src={require('../assets/logo-brew-dr_s.png')}/>
           <ul id="nav-mobile" style={listStyles} class="right hide-on-med-and-down">
-            <li><a href="sass.html" class="blue-text text-darken-2">Sass</a></li>
-            <li><a href="badges.html" class="blue-text text-darken-2">Components</a></li>
-            <li><a href="collapsible.html" class="blue-text text-darken-2">JavaScript</a></li>
+            <li><a href="sass.html" class="brown-text darken-4" style={textStyles}>WHAT IS KOMBUCHA?</a></li>
+            <li><a href="badges.html" class="brown-text darken-4" style={textStyles}>ABOUT US</a></li>
+            <li><a href="collapsible.html" class="brown-text darken-4" style={textStyles}>OUR KOMBUCHA</a></li>
+            <li><a href="badges.html" class="brown-text darken-4" style={textStyles}>FIND BREW DR.</a></li>
+            <li><a href="collapsible.html" class="brown-text darken-4" style={textStyles}>BLOG</a></li>
           </ul>
         </div>
       </nav>
