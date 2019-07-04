@@ -1,14 +1,13 @@
 import React from 'react';
-import LeftSide from './LeftSide';
-import RightSide from './RightSide';
-// import Grid from 'react-css-grid'
+import NavBar from './NavBar';
+import 'materialize-css/dist/css/materialize.min.css'
 
 function MainContainer() {
   var myMainContainerStyles = {
+    backgroundColor: '#fafafa',
     display: 'grid',
-    gridTemplateColumns: '3fr 2fr',
+    gridTemplateColumns: '100hr',
     gridTemplateArea: 'left right',
-    backgroundColor: '#dadada',
     paddingRight: '5%',
     paddingLeft: '2%',
     paddingTop: '2%',
@@ -17,8 +16,7 @@ function MainContainer() {
 
   return (
       <div style={myMainContainerStyles}>
-        <LeftSide className='left'/>
-        <RightSide className='right'/>
+        <NavBar/>
       </div>
   )
 }
