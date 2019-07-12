@@ -30,6 +30,7 @@ class App extends React.Component {
 
   handleCurrentKombucha(e) {
     let divId = e.currentTarget.dataset.id;
+    console.log("id", divId);
       if (divId === "1") {
         (this.state.currentKombucha = "Clear Mind")
       } else if (divId === "2") {
@@ -93,7 +94,8 @@ console.log(this.divId);
       <div>
       <Switch>
       <Route exact path='/' render={()=><MainContainer
-        onHandleCurrentKombucha={this.state.currentKombucha}
+        onCurrentKombucha={this.handleCurrentKombucha}
+        currentKombucha={this.state.currentKombucha}
         name={this.state.kombuchaName}
         description={this.state.description}
         availibility={this.state.availibility}
