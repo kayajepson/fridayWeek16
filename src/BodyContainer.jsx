@@ -24,9 +24,9 @@ class BodyContainer extends React.Component{
   }
 
 
-  handleCurrentKombucha(el) {
+  handleCurrentKombucha(e) {
     this.setState({
-      currentKombucha : el.target.value
+      currentKombucha : e.currentTarget.dataset.id
 
       // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
       // (divId === "2") ? (this.currentKombucha: "Love"):
@@ -51,7 +51,7 @@ class BodyContainer extends React.Component{
     return (
       <div style={myBodyContainerStyles}>
       <div class="row">
-      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={this.onCurrentKombucha} value="1"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
+      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={this.onCurrentKombucha.bind(this)} value="1"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
       </Link>
       <div class="card-image waves-effect waves-block waves-light col s4">
       <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
