@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentKombucha: null,
-      name: "",
+      name: "test",
       description: "",
       availibility: "",
       quote: "",
@@ -26,6 +26,25 @@ class App extends React.Component {
     this.handleQuote = this.handleQuote.bind(this);
     this.handleRating = this.handleRating.bind(this);
   }
+
+  handleCurrentKombucha(el) {
+    this.setState({
+      currentKombucha : el.target.value
+
+      // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
+      // (divId === "2") ? (this.currentKombucha: "Love"):
+      // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
+      // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
+      // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
+      // (divId === "6") ? (this.currentKombucha: "Power Flower"):
+      // (divId === "7") ? (this.currentKombucha: "Superberry"):
+      // (divId === "8") ? (this.currentKombucha: "Uplift"):
+      // (divId === "9") ? (this.currentKombucha: "Happiness"):
+      // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
+      // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
+      // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
+    });
+  };
 
   handleKombuchaName(){
     var kombuchaName = this.state.name;
@@ -48,24 +67,6 @@ class App extends React.Component {
   }
 
 
-  handleCurrentKombucha = ev => {
-    this.setState({
-      currentKombucha : ev.currentTarget.dataset.div_id
-
-      // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
-      // (divId === "2") ? (this.currentKombucha: "Love"):
-      // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
-      // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
-      // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
-      // (divId === "6") ? (this.currentKombucha: "Power Flower"):
-      // (divId === "7") ? (this.currentKombucha: "Superberry"):
-      // (divId === "8") ? (this.currentKombucha: "Uplift"):
-      // (divId === "9") ? (this.currentKombucha: "Happiness"):
-      // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
-      // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
-      // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
-    });
-  };
 
   render() {
     console.log(this.divId);
@@ -76,12 +77,12 @@ class App extends React.Component {
       <Route exact path='/' component={MainContainer} />
       <Route path='/clearmind' component={ClearMind} />
       <Route path='/aboutUs' component={AboutUs} />
-      <Route path='/kombuchaDetails'render={()=><KombuchaDetails onHandleCurrentKombucha={this.handleCurrentKombucha}
-      onKombuchaName={this.handleKombuchaName}
-      onHandleDescription={this.handleDescription}
-      onHandleAvailibility={this.handleAvailibility}
-      onHandleQuote={this.handleQuote}
-      onHandleRating={this.handleRating}/>}/>
+      <Route path='/kombuchaDetails'render={()=><KombuchaDetails currentKombucha={this.state.handleCurrentKombucha}
+      name={this.state.handleKombuchaName}
+      description={this.state.handleDescription}
+      availibility={this.state.handleAvailibility}
+      quote={this.state.handleQuote}
+      rating={this.state.handleRating}/>}/>
       </Switch>
       </BrowserRouter>
       </div>
