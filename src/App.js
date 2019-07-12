@@ -20,6 +20,7 @@ class App extends React.Component {
       rating: "",
     };
 
+    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
     this.handleKombuchaName = this.handleKombuchaName.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAvailibility = this.handleAvailibility.bind(this);
@@ -27,7 +28,9 @@ class App extends React.Component {
     this.handleRating = this.handleRating.bind(this);
   }
 
-
+  handleCurrentKombucha() {
+    var currentKombucha = this.state.currentKombucha;
+  }
   handleKombuchaName(){
     var kombuchaName = this.state.name;
   }
@@ -59,12 +62,12 @@ class App extends React.Component {
       <Route exact path='/' component={MainContainer} />
       <Route path='/clearmind' component={ClearMind} />
       <Route path='/aboutUs' component={AboutUs} />
-      <Route path='/kombuchaDetails'render={()=><KombuchaDetails currentKombucha={this.state.handleCurrentKombucha}
-      name={this.state.handleKombuchaName}
-      description={this.state.handleDescription}
-      availibility={this.state.handleAvailibility}
-      quote={this.state.handleQuote}
-      rating={this.state.handleRating}/>}/>
+      <Route path='/kombuchaDetails'render={()=><KombuchaDetails currentKombucha={this.state.currentKombucha}
+      name={this.state.kombuchaName}
+      description={this.state.description}
+      availibility={this.state.availibility}
+      quote={this.state.quote}
+      rating={this.state.rating}/>}/>
       </Switch>
       </BrowserRouter>
       </div>

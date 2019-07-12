@@ -17,50 +17,38 @@ import SpicedAppleSmSq from './assets/BrewDr-Web-Tiles-SA.png';
 import CitrusHopsSmSq from './assets/BrewDr-Web-Tiles-CH.png';
 import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
 
-class BodyContainer extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentKombucha: ""
-    }
-    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
-  }
+function BodyContainer(props){
 
-
-  handleCurrentKombucha(e) {
-    let divId = e.currentTarget.dataset.id;
-    if (divId === "one") {
-      this.setState({
-      currentKombucha: "Clear Mind"});
-      console.log("here", this.state.currentKombucha);
-    }
-    // this.setState({
-    //   divId : e.currentTarget.dataset.id
-    //   // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
-    //   // (divId === "2") ? (this.currentKombucha: "Love"):
-    //   // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
-    //   // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
-    //   // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
-    //   // (divId === "6") ? (this.currentKombucha: "Power Flower"):
-    //   // (divId === "7") ? (this.currentKombucha: "Superberry"):
-    //   // (divId === "8") ? (this.currentKombucha: "Uplift"):
-    //   // (divId === "9") ? (this.currentKombucha: "Happiness"):
-    //   // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
-    //   // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
-    //   // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
+  // let divId = e.currentTarget.dataset.id;
+  // if (divId === "one") {
     //
-    // });
-  };
-  render(){
-    var myBodyContainerStyles = {
-      backgroundColor: '#fafafa',
-      display: 'grid',
-      gridTemplateColumns: '100vr',
-    }
+    // }
+    // this.setState({
+      //   divId : e.currentTarget.dataset.id
+      //   // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
+      //   // (divId === "2") ? (this.currentKombucha: "Love"):
+      //   // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
+      //   // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
+      //   // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
+      //   // (divId === "6") ? (this.currentKombucha: "Power Flower"):
+      //   // (divId === "7") ? (this.currentKombucha: "Superberry"):
+      //   // (divId === "8") ? (this.currentKombucha: "Uplift"):
+      //   // (divId === "9") ? (this.currentKombucha: "Happiness"):
+      //   // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
+      //   // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
+      //   // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
+      //
+      // });
+      var myBodyContainerStyles = {
+        backgroundColor: '#fafafa',
+        display: 'grid',
+        gridTemplateColumns: '100vr',
+      }
+
     return (
       <div style={myBodyContainerStyles}>
       <div class="row">
-      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={this.handleCurrentKombucha} data-id="one"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
+      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={props.handleCurrentKombucha} data-id="one"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
       </Link>
       <div class="card-image waves-effect waves-block waves-light col s4">
       <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
@@ -107,11 +95,10 @@ class BodyContainer extends React.Component{
       </div>
       </div>
     )
+
   }
-}
+  BodyContainer.propTypes = {
+    currentKombucha: PropTypes.string,
+  };
 
-BodyContainer.propTypes = {
-  currentKombucha: PropTypes.string,
-};
-
-export default BodyContainer;
+  export default BodyContainer;
