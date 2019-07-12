@@ -17,67 +17,92 @@ import SpicedAppleSmSq from './assets/BrewDr-Web-Tiles-SA.png';
 import CitrusHopsSmSq from './assets/BrewDr-Web-Tiles-CH.png';
 import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
 
-function BodyContainer(props) {
-  var myBodyContainerStyles = {
-    backgroundColor: '#fafafa',
-    display: 'grid',
-    gridTemplateColumns: '100vr',
+class BodyContainer extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
 
-  return (
-  <div style={myBodyContainerStyles}>
-    <div class="row">
-      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={props.onCurrentKombucha} value="1"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
+
+  handleCurrentKombucha(el) {
+    this.setState({
+      currentKombucha : el.target.value
+
+      // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
+      // (divId === "2") ? (this.currentKombucha: "Love"):
+      // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
+      // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
+      // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
+      // (divId === "6") ? (this.currentKombucha: "Power Flower"):
+      // (divId === "7") ? (this.currentKombucha: "Superberry"):
+      // (divId === "8") ? (this.currentKombucha: "Uplift"):
+      // (divId === "9") ? (this.currentKombucha: "Happiness"):
+      // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
+      // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
+      // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
+    });
+  };
+  render(){
+    var myBodyContainerStyles = {
+      backgroundColor: '#fafafa',
+      display: 'grid',
+      gridTemplateColumns: '100vr',
+    }
+    return (
+      <div style={myBodyContainerStyles}>
+      <div class="row">
+      <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={this.onCurrentKombucha} value="1"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
       </Link>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
+      <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/mintLemonade"><img class="activator" alt="mint lemonade" src={MintLemonadeSmSq}/></a>
+      <a href="/mintLemonade"><img class="activator" alt="mint lemonade" src={MintLemonadeSmSq}/></a>
       </div>
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/gingerTumeric"><img class="activator" alt="ginger tumeric" src={GingerTumericSmSq}/></a>
+      <a href="/gingerTumeric"><img class="activator" alt="ginger tumeric" src={GingerTumericSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/strawberryBasil"><img class="activator" alt="strawberry basil" src={StrawberryBasilSmSq}/></a>
+      <a href="/strawberryBasil"><img class="activator" alt="strawberry basil" src={StrawberryBasilSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/powerFlower"><img class="activator" alt="power flower" src={PowerFlowerSmSq}/></a>
+      <a href="/powerFlower"><img class="activator" alt="power flower" src={PowerFlowerSmSq}/></a>
       </div>
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/superberry"><img class="activator" alt="superberry" src={SuperBerrySmSq}/></a>
+      <a href="/superberry"><img class="activator" alt="superberry" src={SuperBerrySmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/uplift"><img class="activator" alt="uplift" src={UpLiftSmSq}/></a>
+      <a href="/uplift"><img class="activator" alt="uplift" src={UpLiftSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/happiness"><img class="activator" alt="happiness" src={HappinessSmSq}/></a>
+      <a href="/happiness"><img class="activator" alt="happiness" src={HappinessSmSq}/></a>
       </div>
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/spicedApple"><img class="activator" alt="spiced apple" src={SpicedAppleSmSq}/></a>
+      <a href="/spicedApple"><img class="activator" alt="spiced apple" src={SpicedAppleSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/citrusHops"><img class="activator" alt="citrus hops" src={CitrusHopsSmSq}/></a>
+      <a href="/citrusHops"><img class="activator" alt="citrus hops" src={CitrusHopsSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/lemonGingerCayenne"><img class="activator" alt="lemon ginger cayenne" src={LemonGingerCayenneSmSq}/></a>
+      <a href="/lemonGingerCayenne"><img class="activator" alt="lemon ginger cayenne" src={LemonGingerCayenneSmSq}/></a>
       </div>
-    </div>
-  </div>
-  )
+      </div>
+      </div>
+    )
+  }
 }
 
 BodyContainer.propTypes = {
-    currentKombucha: PropTypes.string,
+  currentKombucha: PropTypes.string,
 };
 
 export default BodyContainer;

@@ -12,14 +12,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentKombucha: null,
+      currentKombucha: "",
       name: "test",
       description: "",
       availibility: "",
       quote: "",
       rating: "",
     };
-    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
+    
     this.handleKombuchaName = this.handleKombuchaName.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAvailibility = this.handleAvailibility.bind(this);
@@ -27,24 +27,6 @@ class App extends React.Component {
     this.handleRating = this.handleRating.bind(this);
   }
 
-  handleCurrentKombucha(el) {
-    this.setState({
-      currentKombucha : el.target.value
-
-      // {(divId === "1") ? (this.currentKombucha: "Clear Mind"):
-      // (divId === "2") ? (this.currentKombucha: "Love"):
-      // (divId === "3") ? (this.currentKombucha: "Mint Lemonade"):
-      // (divId === "4") ? (this.currentKombucha: "Ginger Tumeric"):
-      // (divId === "5") ? (this.currentKombucha: "Strawberry Basil"):
-      // (divId === "6") ? (this.currentKombucha: "Power Flower"):
-      // (divId === "7") ? (this.currentKombucha: "Superberry"):
-      // (divId === "8") ? (this.currentKombucha: "Uplift"):
-      // (divId === "9") ? (this.currentKombucha: "Happiness"):
-      // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
-      // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
-      // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
-    });
-  };
 
   handleKombuchaName(){
     var kombuchaName = this.state.name;
