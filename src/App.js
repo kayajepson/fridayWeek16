@@ -62,9 +62,9 @@ class App extends React.Component {
           // (divId === "10") ? (this.currentKombucha: "Spiced Apple"):
           // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
           // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
-
-    var currentKombucha = this.state.currentKombucha;
+console.log("ck",this.state.currentKombucha);
   }
+
   handleKombuchaName(){
     var kombuchaName = this.state.name;
   }
@@ -91,19 +91,24 @@ class App extends React.Component {
     console.log(this.divId);
     return (
       <div>
-      <BrowserRouter>
       <Switch>
-      <Route exact path='/' component={MainContainer} />
+      <Route exact path='/' render={()=><MainContainer
+        onHandleCurrentKombucha={this.state.currentKombucha}
+        name={this.state.kombuchaName}
+        description={this.state.description}
+        availibility={this.state.availibility}
+        quote={this.state.quote}
+        rating={this.state.rating}/>}/>
       <Route path='/clearmind' component={ClearMind} />
       <Route path='/aboutUs' component={AboutUs} />
-      <Route path='/kombuchaDetails'render={()=><KombuchaDetails currentKombucha={this.state.currentKombucha}
+      <Route path='/kombuchaDetails'render={()=><KombuchaDetails
+      currentKombucha={this.state.currentKombucha}
       name={this.state.kombuchaName}
       description={this.state.description}
       availibility={this.state.availibility}
       quote={this.state.quote}
       rating={this.state.rating}/>}/>
       </Switch>
-      </BrowserRouter>
       </div>
     );
   }
