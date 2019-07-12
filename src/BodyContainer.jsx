@@ -28,7 +28,7 @@ function BodyContainer(props){
   return (
     <div style={myBodyContainerStyles}>
     <div class="row">
-    <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={props.currentKombucha} data-id="one"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
+    <Link to="/kombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={props.onHandleCurrentKombucha} data-id="one"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
     </Link>
     <div class="card-image waves-effect waves-block waves-light col s4">
     <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
@@ -78,6 +78,7 @@ function BodyContainer(props){
 
   }
   BodyContainer.propTypes = {
+    onHandleCurrentKombucha: PropTypes.func,
     currentKombucha: PropTypes.string,
     name: PropTypes.string,
     description: PropTypes.string,

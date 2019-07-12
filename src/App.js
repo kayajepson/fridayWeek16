@@ -63,6 +63,7 @@ class App extends React.Component {
           // (divId === "11") ? (this.currentKombucha: "Citrus Hops"):
           // (divId === "12") ? (this.currentKombucha: "Lemon Ginger Cayenne"): (this.currentKombucha: "Null")}
 console.log("ck",this.state.currentKombucha);
+console.log(this.divId);
   }
 
   handleKombuchaName(){
@@ -88,7 +89,6 @@ console.log("ck",this.state.currentKombucha);
 
 
   render() {
-    console.log(this.divId);
     return (
       <div>
       <Switch>

@@ -30,6 +30,7 @@ function MainContainer(props) {
 }
 
 MainContainer.propTypes = {
+  onHandleCurrentKombucha: PropTypes.func,
   currentKombucha: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string,
