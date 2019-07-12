@@ -12,14 +12,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentKombucha: "",
+      currentKombucha: "asdf",
       name: "test",
       description: "",
       availibility: "",
       quote: "",
       rating: "",
     };
-    
+
     this.handleKombuchaName = this.handleKombuchaName.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAvailibility = this.handleAvailibility.bind(this);
