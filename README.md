@@ -1,5 +1,5 @@
 # Kombucha Tap Room
-An online tap room where you can track a store's kombucha selection. I decided to try to recreate the Brew Dr Kombucha website instead of fabricating one.
+An online tap room where you can track a store's kombucha selection. I decided to try to recreate the Brew Dr Kombucha website instead of fabricating one. https://www.brewdrkombucha.com/
 
 The initial component tree:
 ![component tree image](./src/assets/compTree.png)

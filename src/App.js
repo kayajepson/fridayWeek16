@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css'
 import { Switch, Route } from 'react-router-dom';
 import ClearMind from './ClearMind';
+import AboutUs from './AboutUs';
 
 function App() {
   var appStyles = {
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={MainContainer} />
         <Route exact path='/clearmind' component={ClearMind} />
+        <Route exact path='/aboutUs' component={AboutUs} />
       </Switch>
     </BrowserRouter>
     </div>

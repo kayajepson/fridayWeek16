@@ -132,15 +132,32 @@ function ClearMind(props) {
         <img class="activator" alt="logo" style={headerImgStyle} src={require('./assets/CM-Desktop.png')}/>
         {/*<Kombucha/>*/}
         <div style={rectangleStyle}>
-        <h2 style={nameStyle}>CLEAR MIND</h2>
+        <h2 style={nameStyle}>{props.name}CLEAR MIND</h2>
         <br/><br/>
-        <span style={descriptionStyle}>A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is <br/> bright and invigorating.</span>
+        <span style={descriptionStyle}>{props.description}A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is <br/> bright and invigorating.</span>
         <br/><br/>
-        <span style={availibilityStyle}>Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs.</span>
+        <span style={availibilityStyle}>{props.availibility}Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs.</span>
         <br/><br/>
-        <span style={quoteStyle}>"My favorite kombucha flavor out there!"</span>
+        <span style={quoteStyle}>{props.quote}"My favorite kombucha flavor out there!"</span>
         <br/><br/>
         <span style={ratingStyle}>
+        {/* if (parseFloat({props.rating}) < 5) {
+          return (
+          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+          <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{props.rating}</h6>
+        ) else (
+          return (
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{props.rating}</h6>
+          )
+        )
+      };*/} 
         <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
         <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
         <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
