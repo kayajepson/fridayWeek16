@@ -1,7 +1,9 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
+//images
 import ClearMindSmSq from './assets/BrewDr-Web-Tiles-CM.png';
 import LoveSmSq from './assets/BrewDr-Web-Tiles-LUV.png';
 import MintLemonadeSmSq from './assets/BrewDr-Web-Tiles-ML.png';
@@ -15,7 +17,7 @@ import SpicedAppleSmSq from './assets/BrewDr-Web-Tiles-SA.png';
 import CitrusHopsSmSq from './assets/BrewDr-Web-Tiles-CH.png';
 import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
 
-function BodyContainer() {
+function BodyContainer(props) {
   var myBodyContainerStyles = {
     backgroundColor: '#fafafa',
     display: 'grid',
@@ -25,11 +27,10 @@ function BodyContainer() {
   return (
   <div style={myBodyContainerStyles}>
     <div class="row">
+      <Link to="/KombuchaDetails"><div class="card-image waves-effect waves-block waves-light col s4" onClick={props.onCurrentKombucha} data-div_id="1"><img class="activator" alt="clear mind" src={ClearMindSmSq}/> </div>
+      </Link>
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/clearmind" onClick={props.onCurrentKombucha}><img class="activator" alt="clear mind" src={ClearMindSmSq}/></a>
-      </div>
-      <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/love"><img class="activator" alt="love" src={LoveSqSm}/></a>
+        <a href="/love"><img class="activator" alt="love" src={LoveSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
         <a href="/mintLemonade"><img class="activator" alt="mint lemonade" src={MintLemonadeSmSq}/></a>

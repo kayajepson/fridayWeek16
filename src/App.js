@@ -6,38 +6,43 @@ import 'materialize-css/dist/css/materialize.min.css'
 import { Switch, Route } from 'react-router-dom';
 import ClearMind from './ClearMind';
 import AboutUs from './AboutUs';
+import KombuchaDetails from './KombuchaDetails';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentKombucha: null
+      currentKombucha: null,
+      name: "",
+      description: "",
+      availibility: "",
+      quote: "",
+      rating: "",
+      color: "",
+
     };
     this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
 
-  handleCurrentKombucha() {
-    var newSelectedKombucha = this.state.selectedKombucha;
-    this.setState({selectedKombucha: newSelectedKombucha});
-    console.log(this.state.selectedKombucha);
-  }
-  var appStyles = {
-    backgroundColor: '#fafafa',
-  }
+  handleCurrentKombucha = ev => {
+    this.setState({
+      currentKombucha: ev.currentTarget.dataset.div_id
+    });
+  };
 
-  return (
-    <div>
-    <BrowserRouter>
+  render() {
+    return (
+      <div>
+      <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={MainContainer} />
-        <Route exact path='/clearmind' component={ClearMind} />
-        <Route exact path='/aboutUs' component={AboutUs} />
+      <Route exact path='/' component={MainContainer} />
+      <Route path='/clearmind' component={ClearMind} />
+      <Route path='/aboutUs' component={AboutUs} />
+      <Route path='/kombuchaDetails'render={()=><KombuchaDetails onHandleCurrentKombucha={this.handleCurrentKombucha}/>}/>
       </Switch>
-    </BrowserRouter>
-    </div>
-
-
-  );
+      </BrowserRouter>
+      </div>
+    );
+  }
 }
-
 export default App;
