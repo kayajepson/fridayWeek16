@@ -7,7 +7,20 @@ import { Switch, Route } from 'react-router-dom';
 import ClearMind from './ClearMind';
 import AboutUs from './AboutUs';
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentKombucha: null
+    };
+    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
+  }
+
+  handleCurrentKombucha() {
+    var newSelectedKombucha = this.state.selectedKombucha;
+    this.setState({selectedKombucha: newSelectedKombucha});
+    console.log(this.state.selectedKombucha);
+  }
   var appStyles = {
     backgroundColor: '#fafafa',
   }

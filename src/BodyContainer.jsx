@@ -1,5 +1,6 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css'
+import PropTypes from 'prop-types';
 
 import ClearMindSmSq from './assets/BrewDr-Web-Tiles-CM.png';
 import LoveSmSq from './assets/BrewDr-Web-Tiles-LUV.png';
@@ -25,7 +26,7 @@ function BodyContainer() {
   <div style={myBodyContainerStyles}>
     <div class="row">
       <div class="card-image waves-effect waves-block waves-light col s4">
-        <a href="/clearmind"><img class="activator" alt="clear mind" src={ClearMindSmSq}/></a>
+        <a href="/clearmind" onClick={props.onCurrentKombucha}><img class="activator" alt="clear mind" src={ClearMindSmSq}/></a>
       </div>
       <div class="card-image waves-effect waves-block waves-light col s4">
         <a href="/love"><img class="activator" alt="love" src={LoveSqSm}/></a>
@@ -73,5 +74,9 @@ function BodyContainer() {
   </div>
   )
 }
+
+BodyContainer.propTypes = {
+    currentKombucha: PropTypes.string,
+};
 
 export default BodyContainer;
