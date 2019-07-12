@@ -29,7 +29,8 @@ class App extends React.Component {
   }
 
   handleCurrentKombucha(e) {
-    let divId = e.currentTarget.dataset.id;
+     e.preventDefault();
+    let divId = e.id.value;
     console.log("id", divId);
       if (divId === "1") {
         (this.state.currentKombucha = "Clear Mind")
