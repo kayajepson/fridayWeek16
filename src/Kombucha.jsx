@@ -17,11 +17,9 @@ function Kombucha(props) {
   }
 
 
-
-
   return (
     <div style={rightContentStyle}>
-    {props.name}asdf
+    {props.name}
     <p>{props.description}</p>
     {props.availibility}
     {props.quote}
