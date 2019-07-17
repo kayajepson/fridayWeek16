@@ -13,8 +13,13 @@ class BodyContainer extends React.Component {
     this.state = {
       currentKombucha: "",
     };
-    // this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
+    this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
+
+  handleCurrentKombucha() {
+      // let divId = buch.id;
+      // console.log("id", divId);
+    }
 
 
   render() {
@@ -31,15 +36,17 @@ class BodyContainer extends React.Component {
 
       <div style={myBodyContainerStyles}>
         <div class="row">
-          {kombuchaDetails.map((buch, index) => <div class="card-image waves-effect waves-block waves-light col s4"><Kombucha
-            name={buch.name}
-            description={buch.description}
-            availibility={buch.availibility}
-            quote={buch.quote}
-            rating={buch.rating}
-            color={buch.color}
-            key={index}/>
-            <img class="activator" alt="{buch.name}" src={buch.sq_img}/>
+          {kombuchaDetails.map((buch, index) =>
+            <div class="card-image waves-effect waves-block waves-light col s4" onClick={this.handleCurrentKombucha()}>
+              <img class="activator" alt="{buch.name}" src={buch.sq_img}/>
+              <Kombucha
+                //name={buch.name}
+                //description={buch.description}
+                //availibility={buch.availibility}
+                //quote={buch.quote}
+                //rating={buch.rating}
+                //color={buch.color}
+              key={index}/>
             </div>
           )}
           </div>
