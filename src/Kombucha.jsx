@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 
 function Kombucha(props) {
   var rightContentStyle = {
-    minHeight: '150px',
-    borderRadius: '5px',
-    backgroundColor: '#edeff1',
+
   }
   var rightContentHeader = {
     padding: '1px',
@@ -18,9 +16,9 @@ function Kombucha(props) {
 
 
   return (
-    <div style={rightContentStyle}>
+    <div>
     {props.name}
-    <p>{props.description}</p>
+    {props.description}
     {props.availibility}
     {props.quote}
     {props.rating}

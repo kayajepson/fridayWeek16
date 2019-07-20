@@ -1,3 +1,5 @@
+import { v4 } from 'uuid';
+
 //images
 import ClearMindSmSq from './assets/BrewDr-Web-Tiles-CM.png';
 import LoveSmSq from './assets/BrewDr-Web-Tiles-LUV.png';
@@ -21,7 +23,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "My favorite kombucha flavor out there!",
       rating: "4.7",
       color: "#86b7bc",
-      sq_img: ClearMindSmSq
+      sq_img: ClearMindSmSq, 
+      id: v4()
     },
     {
       name: "LOVE",
@@ -30,7 +33,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "I would definitely purchase this product again.",
       rating: "4.8",
       color: "",
-      sq_img: LoveSmSq
+      sq_img: LoveSmSq,
+      id: v4()
     },
     {
       name: "MINT LEMONADE",
@@ -39,7 +43,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Mint Lemonade! Or Summer Mojito?",
       rating: "5",
       color: "",
-      sq_img: MintLemonadeSmSq
+      sq_img: MintLemonadeSmSq,
+      id: v4()
     },
     {
       name: "GINGER TUMERIC",
@@ -48,7 +53,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Perfectly neutral",
       rating: "5",
       color: "",
-      sq_img: GingerTumericSmSq
+      sq_img: GingerTumericSmSq,
+      id: v4()
     },
     {
       name: "STRAWBERRY BASIL",
@@ -57,13 +63,15 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Tastes great, and good for you!",
       rating: "4.6",
       color: "",
-      sq_img: StrawberryBasilSmSq
+      sq_img: StrawberryBasilSmSq,
+      id: v4()
     },
     {
       name: "POWER FLOWER",
       description: "This bright and floral brew uses a dynamic blend of hibiscus, orange, lemon thyme, and green tea. Served ice cold or added to slushies and smoothies, it’s a refreshing treat for summer heat.",
       availibility: "Available in: 14oz bottles, 32oz bottles & kegs",
-      sq_img: PowerFlowerSmSq
+      sq_img: PowerFlowerSmSq,
+      id: v4()
     },
     {
       name: "SUPERBERRY",
@@ -72,7 +80,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "My new favorite flavor!!",
       rating: "5",
       color: "",
-      sq_img: SuperBerrySmSq
+      sq_img: SuperBerrySmSq,
+      id: v4()
     },
     {
       name: "UPLIFT",
@@ -81,7 +90,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "This is my absolute favorite! I buy it all the time.",
       rating: "5",
       color: "",
-      sq_img: UpLiftSmSq
+      sq_img: UpLiftSmSq,
+      id: v4()
     },
     {
       name: "HAPPINESS",
@@ -90,7 +100,8 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Happiness in a bottle.",
       rating: "5",
       color: "",
-      sq_img: HappinessSmSq
+      sq_img: HappinessSmSq,
+      id: v4()
     },
     {
       name: "SPICED APPLE",
@@ -99,13 +110,15 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Apple pie in a bottle",
       rating: "5",
       color: "",
-      sq_img: SpicedAppleSmSq
+      sq_img: SpicedAppleSmSq,
+      id: v4()
     },
     {
       name: "CITRUS HOPS",
       description: "This unique recipe employs white tea leaves and two types of NW hops. The resulting brew is deliciously light, crisp and refreshing. It’s the happiest home for hops since beer. Cheers!",
       availibility: "Available in: 14oz bottles & kegs",
-      sq_img: CitrusHopsSmSq
+      sq_img: CitrusHopsSmSq,
+      id: v4()
     },
     {
       name: "LEMON GINGER CAYENNE",
@@ -114,6 +127,7 @@ import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
       quote: "Not for the faint of heart, but delicious!",
       rating: "4.8",
       color: "",
-      sq_img: LemonGingerCayenneSmSq
+      sq_img: LemonGingerCayenneSmSq,
+      id: v4()
     }
   ];
