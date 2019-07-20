@@ -17,7 +17,6 @@ class BodyContainer extends React.Component {
   }
 
   handleCurrentKombucha(id) {
-
       let currentKombucha = id;
       console.log("id", currentKombucha);
     }
@@ -36,7 +35,7 @@ class BodyContainer extends React.Component {
         <div class="row">
           {kombuchaDetails.map((buch, index) =>
             <div class="card-image waves-effect waves-block waves-light col s4"
-            onClick={() => this.handleCurrentKombucha(buch.id)}>
+            onClick={() => this.handleCurrentKombucha(index)}>
               <img class="activator" alt="{buch.name}" src={buch.sq_img}/>
               <Kombucha
                 //name={buch.name}
@@ -45,7 +44,7 @@ class BodyContainer extends React.Component {
                 //quote={buch.quote}
                 //rating={buch.rating}
                 //color={buch.color}
-              key={buch.id}/>
+              key={index}/>
             </div>
           )}
           </div>
