@@ -11,14 +11,14 @@ class BodyContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentKombucha: "",
+      currentKombucha: {},
     };
     this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
 
   handleCurrentKombucha(id) {
-      let currentKombucha = kombuchaDetails[id];
-      console.log("id", currentKombucha);
+      this.setState(this.state.currentKombucha = kombuchaDetails[id]);
+      console.log("id", this.state.currentKombucha);
     }
 
 
