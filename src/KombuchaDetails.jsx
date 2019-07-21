@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
 import 'materialize-css/dist/css/materialize.min.css';
-import Background from './assets/headers-bg-clear-mind.jpg';
 import PropTypes from "prop-types";
 import { kombuchaDetails } from './Details';
 import Kombucha from './Kombucha';
@@ -9,6 +8,10 @@ import { withRouter } from 'react-router-dom';
 
 function KombuchaDetails (props){
   let _comment = null;
+  const currentKombuchaDetails = kombuchaDetails[props.index];
+  let color = currentKombuchaDetails.color;
+  let background = currentKombuchaDetails.background_img;
+  console.log(background);
   var myKombuchaDetailsStyles = {
     backgroundColor: '#fafafa',
     display: 'grid',
@@ -17,7 +20,7 @@ function KombuchaDetails (props){
 
   var contentStyles = {
     // marginTop: '10%',
-    backgroundImage: "url(" + Background + ")",
+    backgroundImage: "url(" + `${background}` + ")",
     backgroundSize: 'cover',
     minHeight: '95vh',
     backgroudPosition: 'fixed',
@@ -37,9 +40,10 @@ function KombuchaDetails (props){
 
   var rectangleStyle = {
     marginTop: '3%',
-    backgroundColor: '#7ca7ad',
+    backgroundColor: `${color}`,
     width: '75%',
-    height: '550px',
+    padding: '3%',
+    height: '100vh',
     backgroudPosition: 'absolute',
     display: 'block',
     marginLeft: 'auto',
@@ -126,51 +130,76 @@ function KombuchaDetails (props){
     zIndex: '10',
   }
 
-  console.log('props', props)
-  const currentKombuchaDetails = kombuchaDetails[props.index]
+  var inputStyles = {
+    // marginTop: '-5%',
+    color: `${color}`,
+    backgroundColor: '#ffffff',
+    width: '75%',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }
+
+  var formStyle = {
+    // marginTop: '-5%',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }
+  var buttonStyles = {
+    // marginTop: '-5%',
+    width: '50%',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }
+
   function updateQuotes(e) {
     e.preventDefault();
     let comments = _comment.value;
     currentKombuchaDetails.quote.push(comments);
     _comment.value = ''
+    currentKombuchaDetails.quote = currentKombuchaDetails.quote;
     console.log("quotes", currentKombuchaDetails.quote);
   }
-  console.log('kom', currentKombuchaDetails)
   return (
     <div style={myKombuchaDetailsStyles}>
       <NavBar/>
       <div class="divider"></div>
         <div style={contentStyles}>
-          <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.sq_img}/>
-          <div style={rectangleStyle}>
+          <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.desktop_img}/>
+          <div style={{backgroundColor: currentKombuchaDetails.color}, rectangleStyle}>
           <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
           <br/><br/>
           <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
           <br/><br/>
           <span style={availibilityStyle}>{currentKombuchaDetails.availibility}</span>
           <br/><br/>
+          <span style={ratingStyle}>
+          {(parseFloat(currentKombuchaDetails.rating) < 5) ?
+            (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{currentKombuchaDetails.rating}</h6></div>) :
+            (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+            <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{currentKombuchaDetails.rating}</h6></div>)}
+            </span>
+
           <h4 style={availibilityStyle}>Your Comments:</h4>
           <span style={quoteStyle}>{currentKombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}
           </span>
 
+          <div style={formStyle}>
           <form id="comment-form" onSubmit={e => updateQuotes(e)}>
-          <input autoComplete="off" type="text" ref={(input) => {_comment = input;}}/> <br/><br/>
-          <button type="submit">Add Comment</button>
+          <input autoComplete="off" style={inputStyles} type="text" ref={(input) => {_comment = input;}}/>
+          <button style={buttonStyles} type="submit">Add Comment</button>
           </form>
+          </div>
 
-          <span style={ratingStyle}>
-            {(parseFloat(currentKombuchaDetails.rating) < 5) ?
-              (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{props.rating}</h6></div>) :
-              (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-              <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{props.rating}</h6></div>)}
-            </span>
           </div>
         </div>
       </div>
