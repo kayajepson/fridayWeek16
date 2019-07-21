@@ -20,7 +20,7 @@ function MainContainer(props) {
         <HeaderTwo/>
         <br/>
         <BodyContainer
-        onCurrentKombucha={props.handleCurrentKombucha}
+        onCurrentKombucha={props.onCurrentKombucha}
         currentKombucha={props.currentKombucha}
         name={props.kombuchaName}
         description={props.description}
@@ -33,7 +33,7 @@ function MainContainer(props) {
 
 MainContainer.propTypes = {
   onCurrentKombucha: PropTypes.func,
-  currentKombucha: PropTypes.string,
+  currentKombucha: PropTypes.object,
   name: PropTypes.string,
   description: PropTypes.string,
   availibility: PropTypes.string,

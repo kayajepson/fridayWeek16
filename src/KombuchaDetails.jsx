@@ -3,12 +3,11 @@ import NavBar from './NavBar';
 import 'materialize-css/dist/css/materialize.min.css';
 import Background from './assets/headers-bg-clear-mind.jpg';
 import PropTypes from "prop-types";
-import Details from './Details';
+import { kombuchaDetails } from './Details';
 import Kombucha from './Kombucha';
 import { withRouter } from 'react-router-dom';
 
-function KombuchaDetails (props){
-console.log(props);
+  function KombuchaDetails (props){
   var myKombuchaDetailsStyles = {
     backgroundColor: '#fafafa',
     display: 'grid',
@@ -126,21 +125,25 @@ console.log(props);
     zIndex: '10',
   }
 
+console.log('props', props)
+  const currentKombuchaDetails = kombuchaDetails[props.index]
+  console.log('kom', currentKombuchaDetails)
   return (
     <div style={myKombuchaDetailsStyles}>
     <NavBar/>
     <div class="divider"></div>
     <div style={contentStyles}>
-    <img class="activator" alt="logo" style={headerImgStyle} src={require('./assets/CM-Desktop.png')}/>
+    <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.sq_img}/>
     {/*<Kombucha/>*/}
     <div style={rectangleStyle}>
-    <h2 style={nameStyle}>{props.name}</h2>
+    <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
     <br/><br/>
-    <span style={descriptionStyle}>{props.description}A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is <br/> bright and invigorating.</span>
+    <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
     <br/><br/>
-    <span style={availibilityStyle}>{props.availibility}Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs.</span>
+    <span style={availibilityStyle}>{currentKombuchaDetails.availibility}</span>
     <br/><br/>
-    <span style={quoteStyle}>{props.quote}"My favorite kombucha flavor out there!"</span>
+    <h4 style={availibilityStyle}> Your Comments:</h4>
+    <span style={quoteStyle}>{currentKombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}</span>
     <br/><br/>
     <span style={ratingStyle}>
     {/* if (parseFloat({props.rating}) < 5) {

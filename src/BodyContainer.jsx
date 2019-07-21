@@ -4,21 +4,23 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Kombucha from './Kombucha';
 import { kombuchaDetails } from './Details.jsx';
-
+import KombuchaDetails from './KombuchaDetails';
 
 
 class BodyContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentKombucha: {},
-    };
+    // this.state = {
+    //   currentKombucha: {},
+    // };
     this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
 
-  handleCurrentKombucha(id) {
-      this.setState(this.state.currentKombucha = kombuchaDetails[id]);
-      console.log("id", this.state.currentKombucha);
+  handleCurrentKombucha(index) {
+      let localCK = kombuchaDetails[index];
+      this.props.onCurrentKombucha(localCK);
+      // this.setState(this.state.currentKombucha = kombuchaDetails[id]);
+      // console.log("id", this.state.currentKombucha);
     }
 
 
@@ -34,7 +36,7 @@ class BodyContainer extends React.Component {
       <div style={myBodyContainerStyles}>
         <div class="row">
           {kombuchaDetails.map((buch, index) =>
-            <div class="card-image waves-effect waves-block waves-light col s4"
+            <Link to={`/KombuchaDetails/${index}`}><div class="card-image waves-effect waves-block waves-light col s4"
             onClick={() => this.handleCurrentKombucha(index)}>
               <img class="activator" alt="{buch.name}" src={buch.sq_img}/>
               <Kombucha
@@ -45,7 +47,7 @@ class BodyContainer extends React.Component {
                 //rating={buch.rating}
                 //color={buch.color}
               key={index}/>
-            </div>
+            </div></Link>
           )}
           </div>
         </div>
@@ -54,7 +56,7 @@ class BodyContainer extends React.Component {
     }
 
     BodyContainer.propTypes = {
-      onCurrentKombucha: PropTypes.func,
+      handleUpdateKombucha: PropTypes.func,
       currentKombucha: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,

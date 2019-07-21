@@ -14,16 +14,16 @@ import SpicedAppleSmSq from './assets/BrewDr-Web-Tiles-SA.png';
 import CitrusHopsSmSq from './assets/BrewDr-Web-Tiles-CH.png';
 import LemonGingerCayenneSmSq from './assets/BrewDr-Web-Tiles-LGC.png';
 
-
   export const kombuchaDetails = [
     {
       name: "CLEAR MIND",
       description: "A fan favorite, this brilliant blend of rosemary, mint, sage and green tea is bright and invigorating.",
       availibility: "Available in: 14oz bottles, 32oz bottles, 12oz cans & kegs",
-      quote: "My favorite kombucha flavor out there!",
+      quote: ["My favorite kombucha flavor out there!",
+      "so good, yum!"],
       rating: "4.7",
       color: "#86b7bc",
-      sq_img: ClearMindSmSq, 
+      sq_img: ClearMindSmSq,
       id: v4()
     },
     {
