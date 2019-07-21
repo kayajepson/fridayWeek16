@@ -7,7 +7,8 @@ import { kombuchaDetails } from './Details';
 import Kombucha from './Kombucha';
 import { withRouter } from 'react-router-dom';
 
-  function KombuchaDetails (props){
+function KombuchaDetails (props){
+  let _comment = null;
   var myKombuchaDetailsStyles = {
     backgroundColor: '#fafafa',
     display: 'grid',
@@ -125,64 +126,65 @@ import { withRouter } from 'react-router-dom';
     zIndex: '10',
   }
 
-console.log('props', props)
+  console.log('props', props)
   const currentKombuchaDetails = kombuchaDetails[props.index]
+  function updateQuotes(e) {
+    e.preventDefault();
+    let comments = _comment.value;
+    currentKombuchaDetails.quote.push(comments);
+    _comment.value = ''
+    console.log("quotes", currentKombuchaDetails.quote);
+  }
   console.log('kom', currentKombuchaDetails)
   return (
     <div style={myKombuchaDetailsStyles}>
-    <NavBar/>
-    <div class="divider"></div>
-    <div style={contentStyles}>
-    <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.sq_img}/>
-    {/*<Kombucha/>*/}
-    <div style={rectangleStyle}>
-    <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
-    <br/><br/>
-    <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
-    <br/><br/>
-    <span style={availibilityStyle}>{currentKombuchaDetails.availibility}</span>
-    <br/><br/>
-    <h4 style={availibilityStyle}> Your Comments:</h4>
-    <span style={quoteStyle}>{currentKombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}</span>
-    <br/><br/>
-    <span style={ratingStyle}>
-    {/* if (parseFloat({props.rating}) < 5) {
-      return (
-        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-        <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{props.rating}</h6>
-      ) else (
-        return (
-          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-          <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-          <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{props.rating}</h6>
-        )
-      )
-    };*/}
-    <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-    <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-    <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-    <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-    <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>4.7</h6>
-    </span>
-    </div>
-    </div>
-    </div>
-  )
-}
+      <NavBar/>
+      <div class="divider"></div>
+        <div style={contentStyles}>
+          <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.sq_img}/>
+          <div style={rectangleStyle}>
+          <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
+          <br/><br/>
+          <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
+          <br/><br/>
+          <span style={availibilityStyle}>{currentKombuchaDetails.availibility}</span>
+          <br/><br/>
+          <h4 style={availibilityStyle}>Your Comments:</h4>
+          <span style={quoteStyle}>{currentKombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}
+          </span>
 
-KombuchaDetails.propTypes = {
-  currentKombucha: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  availibility: PropTypes.string,
-  quote: PropTypes.string,
-  rating: PropTypes.string,
-  color: PropTypes.string,
-};
+          <form id="comment-form" onSubmit={e => updateQuotes(e)}>
+          <input autoComplete="off" type="text" ref={(input) => {_comment = input;}}/> <br/><br/>
+          <button type="submit">Add Comment</button>
+          </form>
 
-export default KombuchaDetails;
+          <span style={ratingStyle}>
+            {(parseFloat(currentKombuchaDetails.rating) < 5) ?
+              (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{props.rating}</h6></div>) :
+              (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+              <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{props.rating}</h6></div>)}
+            </span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  KombuchaDetails.propTypes = {
+    currentKombucha: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    availibility: PropTypes.string,
+    quote: PropTypes.string,
+    rating: PropTypes.string,
+    color: PropTypes.string,
+  };
+
+  export default KombuchaDetails;
