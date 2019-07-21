@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Kombucha from './Kombucha';
 import { kombuchaDetails } from './Details.jsx';
-import KombuchaDetails from './KombuchaDetails';
-
 
 class BodyContainer extends React.Component {
   constructor(props) {

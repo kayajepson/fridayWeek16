@@ -3,8 +3,6 @@ import NavBar from './NavBar';
 import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from "prop-types";
 import { kombuchaDetails } from './Details';
-import Kombucha from './Kombucha';
-import { withRouter } from 'react-router-dom';
 
 function KombuchaDetails (props){
   let _comment = null;
@@ -19,7 +17,6 @@ function KombuchaDetails (props){
   }
 
   var contentStyles = {
-    // marginTop: '10%',
     backgroundImage: "url(" + `${background}` + ")",
     backgroundSize: 'cover',
     minHeight: '95vh',
@@ -168,7 +165,7 @@ function KombuchaDetails (props){
       <div class="divider"></div>
         <div style={contentStyles}>
           <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.desktop_img}/>
-          <div style={{backgroundColor: currentKombuchaDetails.color}, rectangleStyle}>
+          <div style={rectangleStyle}>
           <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
           <br/><br/>
           <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
