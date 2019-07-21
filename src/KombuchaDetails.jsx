@@ -4,203 +4,210 @@ import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from "prop-types";
 import { kombuchaDetails } from './Details';
 
-function KombuchaDetails (props){
-  let _comment = null;
-  const currentKombuchaDetails = kombuchaDetails[props.index];
-  let color = currentKombuchaDetails.color;
-  let background = currentKombuchaDetails.background_img;
-  console.log(background);
-  var myKombuchaDetailsStyles = {
-    backgroundColor: '#fafafa',
-    display: 'grid',
-    gridTemplateColumns: '100vr',
+class KombuchaDetails extends React.Component {
+  constructor (props) {
+    super(props)
+    this.index = props.index;
+    this.kombuchaDetails = kombuchaDetails[props.index];
+    let color = this.kombuchaDetails.color;
+    let background = this.kombuchaDetails.background_img;
+    this._comment = null;
+    this.myKombuchaDetailsStyles = {
+      backgroundColor: '#fafafa',
+      display: 'grid',
+      gridTemplateColumns: '100vr',
+    }
+
+    this.contentStyles = {
+      backgroundImage: "url(" + `${background}` + ")",
+      backgroundSize: 'cover',
+      minHeight: '95vh',
+      backgroudPosition: 'fixed',
+      backgroundRepeat: 'no repeat',
+    }
+
+    this.headerImgStyle = {
+      marginTop: '10%',
+      backgroundSize: 'cover',
+      width: '75%',
+      backgroudPosition: 'fixed',
+      backgroundRepeat: 'no repeat',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }
+
+    this.rectangleStyle = {
+      marginTop: '3%',
+      backgroundColor: `${color}`,
+      width: '75%',
+      padding: '3%',
+      height: '100vh',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      zIndex: '5',
+    }
+
+    this.nameStyle = {
+      color: "#ffffff",
+      fontSize: '75px',
+      position: 'sticky',
+      lineHeight: '45px',
+      fontWeight: '600',
+      textAlign: 'center',
+      fontFamily: 'Oswald, sans-serif',
+      fontStretch: 'ultra-condensed',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginTop: '-37px',
+      marginRight: 'auto',
+      zIndex: '10',
+    }
+
+    this.descriptionStyle = {
+      // marginTop: '-5%',
+      color: "#ffffff",
+      fontSize: '25px',
+      fontWeight: '300',
+      textAlign: 'center',
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontStretch: 'ultra-condensed',
+      fontStyle: 'italic',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      zIndex: '10',
+    }
+
+    this.availibilityStyle = {
+      // marginTop: '-5%',
+      color: "#ffffff",
+      fontSize: '20px',
+      fontWeight: '300',
+      textAlign: 'center',
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontStretch: 'ultra-condensed',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      zIndex: '10',
+    }
+
+    this.quoteStyle = {
+      // marginTop: '-5%',
+      color: "#ffffff",
+      fontSize: '25px',
+      fontWeight: '600',
+      textAlign: 'center',
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontStretch: 'ultra-expanded',
+      fontStyle: 'italic',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      zIndex: '10',
+    }
+
+    this.ratingStyle = {
+      // marginTop: '-5%',
+      color: "#ffffff",
+      fontSize: '15px',
+      fontWeight: '600',
+      textAlign: 'center',
+      fontFamily: 'Oswald, sans-serif',
+      fontStretch: 'ultra-condensed',
+      backgroudPosition: 'absolute',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      zIndex: '10',
+    }
+
+    this.inputStyles = {
+      // marginTop: '-5%',
+      color: `${color}`,
+      backgroundColor: '#ffffff',
+      width: '75%',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }
+
+    this.formStyle = {
+      // marginTop: '-5%',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }
+    this.buttonStyles = {
+      // marginTop: '-5%',
+      width: '50%',
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }
+
+    this.updateQuotes = this.updateQuotes.bind(this)
   }
 
-  var contentStyles = {
-    backgroundImage: "url(" + `${background}` + ")",
-    backgroundSize: 'cover',
-    minHeight: '95vh',
-    backgroudPosition: 'fixed',
-    backgroundRepeat: 'no repeat',
-  }
-
-  var headerImgStyle = {
-    marginTop: '10%',
-    backgroundSize: 'cover',
-    width: '75%',
-    backgroudPosition: 'fixed',
-    backgroundRepeat: 'no repeat',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  }
-
-  var rectangleStyle = {
-    marginTop: '3%',
-    backgroundColor: `${color}`,
-    width: '75%',
-    padding: '3%',
-    height: '100vh',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    zIndex: '5',
-  }
-
-  var nameStyle = {
-    color: "#ffffff",
-    fontSize: '75px',
-    position: 'sticky',
-    lineHeight: '45px',
-    fontWeight: '600',
-    textAlign: 'center',
-    fontFamily: 'Oswald, sans-serif',
-    fontStretch: 'ultra-condensed',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginTop: '-37px',
-    marginRight: 'auto',
-    zIndex: '10',
-  }
-
-  var descriptionStyle = {
-    // marginTop: '-5%',
-    color: "#ffffff",
-    fontSize: '25px',
-    fontWeight: '300',
-    textAlign: 'center',
-    fontFamily: 'Josefin Sans, sans-serif',
-    fontStretch: 'ultra-condensed',
-    fontStyle: 'italic',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    zIndex: '10',
-  }
-
-  var availibilityStyle = {
-    // marginTop: '-5%',
-    color: "#ffffff",
-    fontSize: '20px',
-    fontWeight: '300',
-    textAlign: 'center',
-    fontFamily: 'Josefin Sans, sans-serif',
-    fontStretch: 'ultra-condensed',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    zIndex: '10',
-  }
-
-  var quoteStyle = {
-    // marginTop: '-5%',
-    color: "#ffffff",
-    fontSize: '25px',
-    fontWeight: '600',
-    textAlign: 'center',
-    fontFamily: 'Josefin Sans, sans-serif',
-    fontStretch: 'ultra-expanded',
-    fontStyle: 'italic',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    zIndex: '10',
-  }
-
-  var ratingStyle = {
-    // marginTop: '-5%',
-    color: "#ffffff",
-    fontSize: '15px',
-    fontWeight: '600',
-    textAlign: 'center',
-    fontFamily: 'Oswald, sans-serif',
-    fontStretch: 'ultra-condensed',
-    backgroudPosition: 'absolute',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    zIndex: '10',
-  }
-
-  var inputStyles = {
-    // marginTop: '-5%',
-    color: `${color}`,
-    backgroundColor: '#ffffff',
-    width: '75%',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  }
-
-  var formStyle = {
-    // marginTop: '-5%',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  }
-  var buttonStyles = {
-    // marginTop: '-5%',
-    width: '50%',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  }
-
-  function updateQuotes(e) {
+  updateQuotes(e) {
     e.preventDefault();
-    let comments = _comment.value;
-    currentKombuchaDetails.quote.push(comments);
-    _comment.value = ''
-    currentKombuchaDetails.quote = currentKombuchaDetails.quote;
-    console.log("quotes", currentKombuchaDetails.quote);
+    let comments = this._comment.value;
+    this.kombuchaDetails.quote.push(comments);
+    this._comment.value = ''
+    this.setState({kombuchaDetails: this.kombuchaDetails})
   }
-  return (
-    <div style={myKombuchaDetailsStyles}>
+
+  render() {
+    return (
+      <div style={this.myKombuchaDetailsStyles}>
       <NavBar/>
       <div class="divider"></div>
-        <div style={contentStyles}>
-          <img class="activator" alt="logo" style={headerImgStyle} src={currentKombuchaDetails.desktop_img}/>
-          <div style={rectangleStyle}>
-          <h2 style={nameStyle}>{currentKombuchaDetails.name}</h2>
-          <br/><br/>
-          <span style={descriptionStyle}>{currentKombuchaDetails.description}</span>
-          <br/><br/>
-          <span style={availibilityStyle}>{currentKombuchaDetails.availibility}</span>
-          <br/><br/>
-          <span style={ratingStyle}>
-          {(parseFloat(currentKombuchaDetails.rating) < 5) ?
-            (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{currentKombuchaDetails.rating}</h6></div>) :
-            (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
-            <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{currentKombuchaDetails.rating}</h6></div>)}
-            </span>
+      <div style={this.contentStyles}>
+      <img class="activator" alt="logo" style={this.headerImgStyle} src={this.kombuchaDetails.desktop_img}/>
+      <div style={this.rectangleStyle}>
+      <h2 style={this.nameStyle}>{this.kombuchaDetails.name}</h2>
+      <br/><br/>
+      <span style={this.descriptionStyle}>{this.kombuchaDetails.description}</span>
+      <br/><br/>
+      <span style={this.availibilityStyle}>{this.kombuchaDetails.availibility}</span>
+      <br/><br/>
+      <span style={this.ratingStyle}>
+      {(parseFloat(this.kombuchaDetails.rating) < 5) ?
+        (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-75-filled.png')}/><h6>{this.kombuchaDetails.rating}</h6></div>) :
+        (<div><img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/>
+        <img alt="star" src={require('./assets/white-star-100-filled.png')}/><h6>{this.kombuchaDetails.rating}</h6></div>)}
+        </span>
 
-          <h4 style={availibilityStyle}>Your Comments:</h4>
-          <span style={quoteStyle}>{currentKombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}
-          </span>
+        <h4 style={this.availibilityStyle}>Your Comments:</h4>
+        <span style={this.quoteStyle}>{this.kombuchaDetails.quote.map((quote, index) => <p>{quote}</p>)}
+        </span>
 
-          <div style={formStyle}>
-          <form id="comment-form" onSubmit={e => updateQuotes(e)}>
-          <input autoComplete="off" style={inputStyles} type="text" ref={(input) => {_comment = input;}}/>
-          <button style={buttonStyles} type="submit">Add Comment</button>
-          </form>
-          </div>
-
-          </div>
+        <div style={this.formStyle}>
+        <form id="comment-form" onSubmit={e => this.updateQuotes(e)}>
+        <input autoComplete="off" style={this.inputStyles} type="text" ref={(input) => {this._comment = input;}}/>
+        <button style={this.buttonStyles} type="submit">Add Comment</button>
+        </form>
         </div>
-      </div>
-    )
+
+        </div>
+        </div>
+        </div>
+      )
+    }
   }
 
   KombuchaDetails.propTypes = {

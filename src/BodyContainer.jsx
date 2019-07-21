@@ -8,17 +8,13 @@ import { kombuchaDetails } from './Details.jsx';
 class BodyContainer extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   currentKombucha: {},
-    // };
+
     this.handleCurrentKombucha = this.handleCurrentKombucha.bind(this);
   }
 
   handleCurrentKombucha(index) {
       let localCK = kombuchaDetails[index];
       this.props.onCurrentKombucha(localCK);
-      // this.setState(this.state.currentKombucha = kombuchaDetails[id]);
-      // console.log("id", this.state.currentKombucha);
     }
 
 
@@ -27,28 +23,21 @@ class BodyContainer extends React.Component {
       backgroundColor: '#fafafa',
       display: 'grid',
       gridTemplateColumns: '100vr',
+      gridTemplateRows: '100hr'
     }
 
     return (
-
       <div style={myBodyContainerStyles}>
         <div class="row">
           {kombuchaDetails.map((buch, index) =>
-            <Link to={`/KombuchaDetails/${index}`}><div class="card-image waves-effect waves-block waves-light col s4"
-            onClick={() => this.handleCurrentKombucha(index)}>
+            <Link to={`/KombuchaDetails/${index}`}><div class="card-image waves-effect waves-block waves-light col s4" onClick={() => this.handleCurrentKombucha(index)}>
               <img class="activator" alt="{buch.name}" src={buch.sq_img}/>
               <Kombucha
-                //name={buch.name}
-                //description={buch.description}
-                //availibility={buch.availibility}
-                //quote={buch.quote}
-                //rating={buch.rating}
-                //color={buch.color}
               key={index}/>
             </div></Link>
           )}
-          </div>
         </div>
+      </div>
         )
       }
     }
