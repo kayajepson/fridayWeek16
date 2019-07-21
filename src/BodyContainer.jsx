@@ -17,7 +17,7 @@ class BodyContainer extends React.Component {
   }
 
   handleCurrentKombucha(id) {
-      let currentKombucha = id;
+      let currentKombucha = kombuchaDetails[id];
       console.log("id", currentKombucha);
     }
 
