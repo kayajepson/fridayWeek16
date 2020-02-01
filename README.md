@@ -12,17 +12,6 @@ Day 1 progress:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
-## Setup/Installation
-* Project hosted on: https://settlers-ofcatan.firebaseapp.com/ _Hex grid is not responsive. Best viewed at 2560 x 1440_
-* To download and run from local device: git clone https://github.com/j-farkas/Settlers/, and from project directory run npm install.
-* Run `ng serve` for a dev server.
-* Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-## Technologies Used
-* Angular CLI, HTML, CSS, TS, hosted on Firebase
-
 ## Author
 * **Kaya Jepson**
 
